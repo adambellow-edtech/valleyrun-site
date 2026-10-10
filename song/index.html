@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Valley Run course for you</title>
+  <meta name="description" content="A friend made a Valley Run course from a song. Open it in Valley Run and swing to the beat.">
+  <meta property="og:title" content="A Valley Run song course">
+  <meta property="og:description" content="Open it in Valley Run, bring your copy of the song, and swing to the beat.">
+  <meta property="og:image" content="https://valleyrunapp.com/assets/icon.png">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    .open { padding: 72px 0 80px; text-align: center; }
+    .open .wrap { max-width: 560px; }
+    .open img.icon { width: 120px; border-radius: 27px; box-shadow: 0 20px 60px rgba(178,107,255,0.4); }
+    .open h1 { font-family: "Valley", "Archivo", sans-serif; font-weight: 900; text-transform: uppercase; margin: 22px 0 8px; }
+    .open .song { color: var(--sun); font-weight: 700; font-size: 19px; margin-bottom: 24px; }
+    .open .cta { margin: 6px; }
+    .open .ghost { background: transparent; color: var(--cyan); border: 2px solid var(--cyan); }
+    .open p.small { color: var(--muted); font-size: 14px; margin-top: 22px; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../assets/icon.png" alt=""><span><b>Valley</b> Run</span></a>
+    </div>
+  </header>
+  <section class="open">
+    <div class="wrap">
+      <img class="icon" src="../assets/icon.png" alt="Valley Run app icon">
+      <h1>A course for you</h1>
+      <div class="song" id="song">Built from a song by a friend.</div>
+      <a class="cta" id="open" href="#">Open in Valley Run</a>
+      <a class="cta ghost" href="https://apps.apple.com/app/id6821073675">Get Valley Run</a>
+      <p class="small">The link carries the course, not the music. Valley Run will ask you to add your own copy of the song from Apple Music, your library or Files.</p>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Adam Bellow</span>
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var code = (location.hash || "").replace(/^#/, "");
+      var open = document.getElementById("open");
+      if (!code) { open.style.display = "none"; return; }
+      var app = "valleyrun://song?c=" + encodeURIComponent(code);
+      open.href = app;
+      // Try the app straight away on iPhone.
+      if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        setTimeout(function () { location.href = app; }, 300);
+      }
+    })();
+  </script>
+</body>
+</html>
