@@ -66,6 +66,12 @@ h1 { font-weight: 900; font-stretch: 112%; font-size: clamp(32px, 5vw, 48px); ma
 h2 { font-weight: 800; font-size: clamp(24px, 3.4vw, 32px); margin: 0 0 18px; }
 h3 { font-weight: 700; font-size: 19px; margin: 0 0 6px; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.new { display: inline-block; vertical-align: middle; margin-left: 8px; padding: 3px 9px; border-radius: 999px; background: #b57bff; color: #0b0920; font: 700 11px/1.2 "Space Grotesk", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.k .new { margin-left: 6px; padding: 2px 7px; font-size: 10px; }
+.songs .sub { max-width: 720px; margin: -6px 0 22px; opacity: .85; }
+.songs .card { border-color: rgba(181,123,255,.45); }
+@media (max-width: 1000px) and (min-width: 721px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
 .card { background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
 .card p { margin: 0; color: var(--muted); font-size: 16px; }
 .card .k { font: 900 13px/1 "Archivo", sans-serif; letter-spacing: 0.12em; color: var(--magenta); margin-bottom: 10px; text-transform: uppercase; }
@@ -95,7 +101,7 @@ footer a { color: var(--muted); }
   .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
   .shots img { width: 62vw; max-width: 260px; flex: none; scroll-snap-align: center; }
   .shots img:hover { transform: none; }
-  .grid { grid-template-columns: 1fr; }
+  .grid, .grid-4 { grid-template-columns: 1fr; }
   header.top nav { gap: 12px; }
   header.top nav a { font-size: 14px; }
   header.top .brand span { font-size: 15px; }
