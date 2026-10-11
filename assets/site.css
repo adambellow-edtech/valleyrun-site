@@ -196,7 +196,10 @@ footer a { color: var(--muted); }
 
 /* Worlds */
 .worlds2 { padding: 72px 0 88px; }
-.wgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 26px; }
+.wgrid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; margin-top: 26px; }
+.wgrid .world { grid-column: span 2; }
+/* Seven worlds: four on top, three centred below. */
+.wgrid .world:nth-child(5) { grid-column: 2 / span 2; }
 .world { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px; padding: 20px; border-radius: 22px; overflow: hidden; text-decoration: none; color: var(--text); border: 1px solid rgba(255,255,255,.12); isolation: isolate; }
 .world::before { content: ""; position: absolute; inset: 0; background: var(--bg) center 30% / cover; z-index: -2; transition: transform .8s ease; }
 .world::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,10,35,0) 30%, rgba(11,10,35,.92) 78%); z-index: -1; }
@@ -237,6 +240,7 @@ footer a { color: var(--muted); }
   .hero2::after { background: linear-gradient(180deg, rgba(11,10,35,.55), rgba(11,10,35,.85) 70%, var(--night)); }
   .moves { grid-template-columns: 1fr; }
   .wgrid { grid-template-columns: repeat(2, 1fr); }
+  .wgrid .world, .wgrid .world:nth-child(5) { grid-column: auto; }
   .stack { max-width: 460px; margin: 0 auto; width: 100%; padding-bottom: min(92%, 430px); }
   .g1, .g2 { display: none; }
 }
