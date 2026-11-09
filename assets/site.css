@@ -58,6 +58,7 @@ header.top nav a:hover, header.top nav a[aria-current] { color: #fff; }
 .cta:hover { color: var(--night); filter: brightness(1.08); }
 .cta small { font-weight: 600; opacity: 0.75; }
 .price { color: var(--muted); font-size: 14px; margin-top: 10px; }
+.nowfree { display: inline-block; margin-right: 8px; padding: 3px 10px; border-radius: 999px; font-weight: 800; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: #12061f; background: linear-gradient(90deg,#ffd166,#ff6ad5); }
 
 /* Sections */
 section { padding: 64px 0; border-bottom: 1px solid var(--line); }
